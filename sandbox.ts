@@ -1,27 +1,31 @@
-let names = ['sep', 'sah', 'shi'];
+let obj = {
+  fname: 'sep',
+  lname: 'sol',
+  age: 24,
+  isNinja: false
+};
 
-// names = 'not a string';
+// assigning values individually to an object is ok
+obj.fname = 'sepehr';
+obj.age = 25;
+// obj.age = '25';
+// obj.newProperty = false;
 
-names.push('ali');
-// names.push(2);
-// names[0] = true;
+// assigning values alltogether to an object is ok
+obj = {
+  fname: 'sah',
+  lname: 'sol',
+  age: 22,
+  isNinja: true
+};
 
-let numbers = [2, 4, 6, 8];
-
-numbers.push(10);
-// numbers.push('one');
-// numbers[0] = true;
-
-let namesNnums = ['one', 2, 'three', 4, 'five', 6];
-
-namesNnums.push(7);
-namesNnums[1] = 'two';
-// namesNnums.push(true);
-
-// let numsNbools: number[] | boolean[] = ['one'];
-// let numsNbools: number[] | boolean[] = [1, 2, 3, 4];
-let numsNbools: (number | boolean)[] = [1, 2, 3, 4];
-
-numsNbools.push(7);
-numsNbools[1] = true;
-// numsNbools.push('true');
+// but you can't remove, change, or add properties
+/*
+obj = {
+  // fname: 'sah', // <<<
+  lname: 'sol',
+  age: '22', // <<<
+  isNinja: true,
+  newProperty: false // <<<
+};
+*/
