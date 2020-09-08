@@ -1,6 +1,16 @@
-const x = 2;
-let y;
+let fname = 'sepehr';
+let age = 24;
+let isNinja = true;
 
-y = x + 20;
+// fname = 1;
+fname = 'sep';
+// age = 'one';
+age = 25;
+// isNinja = 'true';
+isNinja = false;
 
-console.log(x + y);
+function circumference(diameter) {
+  return diameter * Math.PI;
+}
+
+console.log(circumference('hello'));
