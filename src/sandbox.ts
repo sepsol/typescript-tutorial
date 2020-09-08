@@ -1,27 +1,14 @@
-function fOne() {
-  console.log('one');
-}
-
-function fTwo(): void {
-  console.log('two');
-}
-
-let fThree: Function;
-// fThree = 3;
-fThree = () => console.log('three');
-
-const fFour: Function = (): void => {
-  console.log('four');
+const typeAliasZero = (user: { name: string; age: number }) => {
+  console.log(user);
 };
 
-const fFive: Function = (a: number, b: number): void => {
-  console.log(a + b);
+// Type Alias
+type objNameAge = { name: string; age: number };
+
+const typeAliasOne = (user: objNameAge) => {
+  console.log(`one: ${user}`);
 };
 
-const fSix = (a: number, b: number, c?: number | string) => {
-  console.log(a + b);
-};
-
-const fSeven = (a: number, b: number, c: number = 10) => {
-  console.log(a + b + c);
+const typeAliasTwo = (user: objNameAge) => {
+  console.log(`two: ${user}`);
 };
