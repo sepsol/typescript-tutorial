@@ -10,4 +10,5 @@ isNinja = false;
 function circumference(diameter) {
     return diameter * Math.PI;
 }
-console.log(circumference('hello'));
+// console.log(circumference('hello'));
+console.log(circumference(10));

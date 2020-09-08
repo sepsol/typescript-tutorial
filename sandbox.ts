@@ -9,8 +9,9 @@ age = 25;
 // isNinja = 'true';
 isNinja = false;
 
-function circumference(diameter) {
+function circumference(diameter: number) {
   return diameter * Math.PI;
 }
 
-console.log(circumference('hello'));
+// console.log(circumference('hello'));
+console.log(circumference(10));
