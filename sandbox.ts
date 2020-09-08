@@ -1,4 +1,6 @@
-var x = 2;
-var y;
+const x = 2;
+let y;
+
 y = x + 20;
+
 console.log(x + y);
