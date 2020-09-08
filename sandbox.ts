@@ -1,31 +1,43 @@
-let obj = {
+//
+// explicit types
+let fname: string;
+let num: number;
+let bool: boolean;
+
+num = 2;
+// num = '2';
+// num = true;
+
+//
+// arrays
+let arrayOne: any[];
+arrayOne = [1, 'two', true];
+
+let arrayTwo: string[] = [];
+arrayTwo.push('one');
+
+//
+// union types
+let arrayThree: (string | number)[] = [];
+arrayThree.push(1);
+arrayThree.push('2');
+
+//
+// objects
+let objectOne: object;
+objectOne = {
   fname: 'sep',
-  lname: 'sol',
-  age: 24,
-  isNinja: false
+  lname: 'sol'
 };
 
-// assigning values individually to an object is ok
-obj.fname = 'sepehr';
-obj.age = 25;
-// obj.age = '25';
-// obj.newProperty = false;
+let objectTwo: {
+  fname: string;
+  lname: string;
+  age: number;
+};
 
-// assigning values alltogether to an object is ok
-obj = {
+objectTwo = {
   fname: 'sah',
   lname: 'sol',
-  age: 22,
-  isNinja: true
+  age: 22
 };
-
-// but you can't remove, change, or add properties
-/*
-obj = {
-  // fname: 'sah', // <<<
-  lname: 'sol',
-  age: '22', // <<<
-  isNinja: true,
-  newProperty: false // <<<
-};
-*/
