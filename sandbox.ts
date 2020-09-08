@@ -1,17 +1,25 @@
-let fname = 'sepehr';
-let age = 24;
-let isNinja = true;
+let names = ['sep', 'sah', 'shi'];
 
-// fname = 1;
-fname = 'sep';
-// age = 'one';
-age = 25;
-// isNinja = 'true';
-isNinja = false;
+names.push('ali');
+// names.push(2);
+// names[0] = true;
 
-function circumference(diameter: number) {
-  return diameter * Math.PI;
-}
+let numbers = [2, 4, 6, 8];
 
-// console.log(circumference('hello'));
-console.log(circumference(10));
+numbers.push(10);
+// numbers.push('one');
+// numbers[0] = true;
+
+let namesNnums = ['one', 2, 'three', 4, 'five', 6];
+
+namesNnums.push(7);
+namesNnums[1] = 'two';
+// namesNnums.push(true);
+
+// let numsNbools: number[] | boolean[] = ['one'];
+// let numsNbools: number[] | boolean[] = [1, 2, 3, 4];
+let numsNbools: (number | boolean)[] = [1, 2, 3, 4];
+
+numsNbools.push(7);
+numsNbools[1] = true;
+// numsNbools.push('true');
