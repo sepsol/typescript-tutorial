@@ -1,4 +1,5 @@
 var names = ['sep', 'sah', 'shi'];
+// names = 'not a string';
 names.push('ali');
 // names.push(2);
 // names[0] = true;
