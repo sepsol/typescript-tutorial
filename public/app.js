@@ -1,9 +1,12 @@
 "use strict";
 var Invoice = /** @class */ (function () {
-    function Invoice(c, d, a) {
-        this.client = c;
-        this.details = d;
-        this.amount = a;
+    // client: string;
+    // details: string;
+    // amount: number;
+    function Invoice(client, details, amount) {
+        this.client = client;
+        this.details = details;
+        this.amount = amount;
     }
     Invoice.prototype.format = function () {
         return this.client + " owes $" + this.amount + " for " + this.details;
@@ -16,3 +19,14 @@ var invoices = [];
 invoices.push(invOne);
 invoices.push(invTwo);
 console.log(invoices);
+// testing modifiers:
+// CHANGING VALUES FROM OUTSIDE:
+// invOne.client = 'readonly';
+// invOne.details = 'private';
+invOne.amount = 50; // public
+// READING VALUES FROM OUTSIDE:
+console.log(invOne.client);
+// console.log(invOne.details);
+console.log(invOne.amount);
+// READING VALUES FROM INSIDE:
+console.log(invOne.format());
