@@ -1,36 +1,24 @@
-// === 1 ===
-const anchor1 = document.querySelector('a');
-// const anchor1: HTMLAnchorElement | null
+class Invoice {
+  client: string;
+  details: string;
+  amount: number;
 
-// console.log(anchor1.href);
-if (anchor1) console.log(anchor1.href);
+  constructor(c: string, d: string, a: number) {
+    this.client = c;
+    this.details = d;
+    this.amount = a;
+  }
 
-// === 2 ===
-const anchor2 = document.querySelector('a')!;
-// const anchor2: HTMLAnchorElement
+  format() {
+    return `${this.client} owes $${this.amount} for ${this.details}`;
+  }
+}
 
-console.log(anchor2.href);
+const invOne = new Invoice('mario', 'website design', 200);
+const invTwo = new Invoice('luigi', 'android application', 350);
 
-// ===============================
+let invoices: Invoice[] = [];
+invoices.push(invOne);
+invoices.push(invTwo);
 
-const form1 = document.querySelector('form')!;
-// const form1: HTMLFormElement
-
-const form2 = document.querySelector('.new-item-form')!;
-// const form2: Element
-
-const form = document.querySelector('.new-item-form') as HTMLFormElement;
-console.log(form.children);
-
-// ===============================
-
-const type = document.querySelector('#type') as HTMLSelectElement;
-const tofrom = document.querySelector('#tofrom') as HTMLInputElement;
-const details = document.querySelector('#details') as HTMLInputElement;
-const amount = document.querySelector('#amount') as HTMLInputElement;
-
-form.addEventListener('submit', (e: Event) => {
-  e.preventDefault();
-  console.log(type.value, tofrom.value, details.value, amount.value);
-  console.log(type.value, tofrom.value, details.value, amount.valueAsNumber);
-});
+console.log(invoices);

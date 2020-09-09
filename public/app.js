@@ -1,28 +1,18 @@
 "use strict";
-// === 1 ===
-var anchor1 = document.querySelector('a');
-// const anchor1: HTMLAnchorElement | null
-// console.log(anchor1.href);
-if (anchor1)
-    console.log(anchor1.href);
-// === 2 ===
-var anchor2 = document.querySelector('a');
-// const anchor2: HTMLAnchorElement
-console.log(anchor2.href);
-// ===============================
-var form1 = document.querySelector('form');
-// const form1: HTMLFormElement
-var form2 = document.querySelector('.new-item-form');
-// const form2: Element
-var form = document.querySelector('.new-item-form');
-console.log(form.children);
-// ===============================
-var type = document.querySelector('#type');
-var tofrom = document.querySelector('#tofrom');
-var details = document.querySelector('#details');
-var amount = document.querySelector('#amount');
-form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    console.log(type.value, tofrom.value, details.value, amount.value);
-    console.log(type.value, tofrom.value, details.value, amount.valueAsNumber);
-});
+var Invoice = /** @class */ (function () {
+    function Invoice(c, d, a) {
+        this.client = c;
+        this.details = d;
+        this.amount = a;
+    }
+    Invoice.prototype.format = function () {
+        return this.client + " owes $" + this.amount + " for " + this.details;
+    };
+    return Invoice;
+}());
+var invOne = new Invoice('mario', 'website design', 200);
+var invTwo = new Invoice('luigi', 'android application', 350);
+var invoices = [];
+invoices.push(invOne);
+invoices.push(invTwo);
+console.log(invoices);
