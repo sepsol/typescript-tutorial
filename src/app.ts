@@ -2,42 +2,20 @@ import { Invoice } from './classes/Invoice.js';
 import { Payment } from './classes/Payment.js';
 import { HasFormatter } from './interfaces/HasFormatter.js';
 
-// declaring two objects and making sure that they implement the HasFormatter interface
-let docOne: HasFormatter;
-let docTwo: HasFormatter;
+const form = document.querySelector('.new-item-form') as HTMLFormElement;
 
-docOne = new Invoice('mario', 'website work', 300);
-docTwo = new Payment('luigi', 'plumbing', 550);
+const type = document.querySelector('#type') as HTMLSelectElement;
+const tofrom = document.querySelector('#tofrom') as HTMLInputElement;
+const details = document.querySelector('#details') as HTMLInputElement;
+const amount = document.querySelector('#amount') as HTMLInputElement;
 
-// creating an array that has objects that implement HasFormatter interface
-let docs: HasFormatter[] = [];
-docs.push(docOne);
-docs.push(docTwo);
+form.addEventListener('submit', (e: Event) => {
+  e.preventDefault();
 
-console.log(docs);
+  let doc: HasFormatter;
+  type.value === 'invoice'
+    ? (doc = new Invoice(tofrom.value, details.value, amount.valueAsNumber))
+    : (doc = new Payment(tofrom.value, details.value, amount.valueAsNumber));
 
-//
-
-const invOne = new Invoice('mario', 'website design', 200);
-const invTwo = new Invoice('luigi', 'android application', 350);
-
-let invoices: Invoice[] = [];
-invoices.push(invOne);
-invoices.push(invTwo);
-
-console.log(invoices);
-
-// testing modifiers:
-
-// CHANGING VALUES FROM OUTSIDE:
-// invOne.client = 'readonly';
-// invOne.details = 'private';
-invOne.amount = 50; // public
-
-// READING VALUES FROM OUTSIDE:
-console.log(invOne.client);
-// console.log(invOne.details);
-console.log(invOne.amount);
-
-// READING VALUES FROM INSIDE:
-console.log(invOne.format());
+  console.log(doc.format());
+});
