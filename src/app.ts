@@ -1,4 +1,22 @@
 import { Invoice } from './classes/Invoice.js';
+import { Payment } from './classes/Payment.js';
+import { HasFormatter } from './interfaces/HasFormatter.js';
+
+// declaring two objects and making sure that they implement the HasFormatter interface
+let docOne: HasFormatter;
+let docTwo: HasFormatter;
+
+docOne = new Invoice('mario', 'website work', 300);
+docTwo = new Payment('luigi', 'plumbing', 550);
+
+// creating an array that has objects that implement HasFormatter interface
+let docs: HasFormatter[] = [];
+docs.push(docOne);
+docs.push(docTwo);
+
+console.log(docs);
+
+//
 
 const invOne = new Invoice('mario', 'website design', 200);
 const invTwo = new Invoice('luigi', 'android application', 350);
